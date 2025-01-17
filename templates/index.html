@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Peluang Diterima</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediksi Peluang Diterima</h1>
+        <h2>Masukkan Data Anda untuk Memperkirakan Peluang Diterima</h2>
+        <form method="POST">
+            <label for="gpa">Nilai GPA (0.0 - 4.0):</label>
+            <input type="number" step="0.01" id="gpa" name="gpa" required>
+
+            <label for="extracurricular">Jumlah Kegiatan Ekstrakurikuler (0 - 10):</label>
+            <input type="number" id="extracurricular" name="extracurricular" required>
+
+            <label for="essay_score">Skor Esai (0 - 100):</label>
+            <input type="number" step="0.01" id="essay_score" name="essay_score" required>
+
+            <button type="submit">Hitung Peluang</button>
+        </form>
+
+        {% if result is not none %}
+        <div class="result">
+            <h2>Hasil Perhitungan:</h2>
+            <p>Peluang Diterima: <strong>{{ result }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
